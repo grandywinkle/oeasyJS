@@ -4,16 +4,45 @@
         <link rel="stylesheet" type="text/css" href="css/mystyle.css">
         <!--以上是外部关联样式-->
         <meta charset="UTF-8">
+        <!--meta可以用来描述文档，或者定义关键字，或者重定向网页-->
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />-->
+        <!--<meta http-equiv="Refresh" content="5"url="index.html" />-->
         <title>HTML页面总结</title>
         <style type="text/css">
             h1{
                 text-align:center;
             }
-            image{
+            img{
+                width: 100px;
+                height: 100px;
+            }
+            td{
+                text-align: center;
+                background-color: #9effff;
+            }
+            .cities{
+                background-color: #fd971f;
+                color: #1b1b1b;
+                margin: 20px;
+                padding: 20px;
+            }
+            table.detainable{
+                background-color: #fd971f;
+                margin: 400px;
+                padding: 3px;
+                color: #1b1b1b;
+            }
+            iframe{
+                height: 400px;
+                width: 50%;
+                border: #22c0c4;
+                color: #efd1b5;
             }
         </style>
+        <!--使用base可将所有的超链接设置成在新的页面打开-->
+        <!--<base target="_blank">-->
     </head>
-    <body>
+    <body background="images/background.jpg">
     <h1>第一个标题(主标题，一般只用一次)</h1>
     <h2  id="formula">1.二级标题(可用作分段目录)</h2>
     <h3>1.1三级标题(以此类推可至6及标题)</h3>
@@ -23,6 +52,7 @@
     <img src="images/githubFace.jpg"width="200px"height="'200px" alt="找不到图片"/>
 
 
+    <hr color="darkblue">
 
     <hr color="yellow"/>
     <hr color="pink"/>
@@ -38,6 +68,8 @@
         <p style="font-family:Vivaldi">这段文字用了特殊字体</p>
         <p style="text-align: center">这段文字居中显示</p>
 
+    <hr color="darkblue">
+
     <p><strong>强调文字</strong><br/>
         <b>粗体文字</b><br/>
         <b>大号文字</b><br/>
@@ -51,6 +83,9 @@
         <ins>插入下划线字</ins><br/>
         <del>删除字</del>
     </p>
+
+    <hr color="darkblue">
+
         <pre>
         <code>这是一段python代码，保留了缩进格式
             from time import time
@@ -63,6 +98,7 @@
         <p>这是键盘码,保存的快捷键<kbd>Ctrl</kbd>+<kbd>S</kbd></p>
         <p>这段为变量定义<var>temp_count = 1;value = 1.0;</var></p>
         </pre>
+
 
     <abbr title = "StringBuffer">SB</abbr> .
     <address>
@@ -91,11 +127,376 @@
         </blockquote>
     </p>
 
+    <hr color="darkblue">
+
     <a href="#formula">这是一个id锚，通向本页面中的二级标题</a>
     <a href="#title3">这是一个name锚，指向百度的a标签</a>
     <p id="search">重新打开的页面指向了这里</p>
     <a href="https://grandywinkle.github.io/oeasyJS/#search" target="_blank">跳转至另一个页面的这里</a>
     </body>
-</html>
 
+    <hr color="darkblue">
+
+    <p>图像<img src="images/githubFace.jpg" alt="找不到图片" align="bottom"/>在文本中</p>
+    <p>图像<img src="images/githubFace.jpg" alt="找不到图片" align="middle"/>在文本中</p>
+    <p>图像<img src="images/githubFace.jpg" alt="找不到图片" align="top"/>在文本中</p>
+    <p><img src="images/githubFace.jpg" alt="找不到图片" align="left"/>带有图像的一个段落。图像的 align 属性设置为 "right"。图像将浮动到文本的右侧。</p>
+    <p><img src="images/githubFace.jpg" alt="找不到图片" align="right"/>带有图像的一个段落。图像的 align 属性设置为 "right"。图像将浮动到文本的右侧。</p>
+
+
+    <br><br><br><br>
+    <hr color="darkblue">
+    <p>图像映射,中间是百度，左上角是google，左下角是sougou</p>
+    <p>
+        <img src="images/githubFace.jpg" border="0" usemap="#bearmap" alt="找不到图片"/>
+        <map name="bearmap">
+        <area shape="circle" coords="50,50,10" href="http://www.baidu.com"target="_blank" alt="百度"/>
+        <area shape="circle" coords="0,0,10" href="http://www.google.com"target="_blank" alt="百度"/>
+        <area shape="circle" coords="0,100,10" href="http://www.sougou.com"target="_blank" alt="百度"/>
+        </map>
+    </p>
+
+    <hr color="darkblue">
+    <p><strong>横表格</strong>
+
+        <table border="1">
+        <caption align="bottom">个人信息表</caption>
+            <tr>
+                <th>姓名</th><th>性别</th><th>年龄</th>
+            </tr>
+            <tr>
+                <td>张三</td><td>男</td><td>22</td>
+            </tr>
+            <tr>
+                <td>李四</td><td>男</td><td>23</td>
+            </tr>
+            <tr>
+                <td>王五</td><td>男</td><td>25</td>
+            </tr>
+        </table>
+    </p>
+    <p><strong>竖表格</strong>
+    <table border="1">
+        <caption align="top">个人信息表</caption>
+        <tr>
+            <th>姓名</th><td>张三</td><td>李四</td><td>王五</td>
+        </tr>
+        <tr>
+            <th>性别</th><td>男</td><td>男</td><td>男</td>
+        </tr>
+        <tr>
+            <th>年龄</th><td>21</td><td>34</td><td>22</td>
+        </tr>
+    </table>
+    </p>
+
+    <p><strong>多行表格</strong>
+    <table border="1">
+        <tr>
+            <th>姓名</th><td>张三</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th><td>87878877</td>
+        </tr>
+        <tr>
+            <td>89098765</td>
+        </tr>
+    </table>
+    </p>
+    <p><strong>多行表格</strong>
+    <table border="1">
+        <tr>
+            <th>姓名</th><td colspan="2">张三</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th><td>87878877</td><td>89098765</td>
+        </tr>
+    </table>
+    </p>
+
+    <p>外框表格:
+    <table frame="box">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    上划线表格:
+    <table frame="above">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    下划线表格：
+    <table frame="below">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    上下划线表格:
+    <table frame="hsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    左右边线表格:
+    <table frame="vsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+</p>
+    <hr color="darkred">
+    <p>无序列表</p>
+    <h4>Disc 项目符号列表：</h4>
+    <ul type="disc">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ul>
+    <h4>Circle 项目符号列表：</h4>
+    <ul type="circle">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ul>
+
+    <p>有序列表</p>
+    <h4>字母列表：</h4>
+    <ol type="A">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>小写字母列表：</h4>
+    <ol type="a">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>罗马字母列表：</h4>
+    <ol type="I">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>一个嵌套列表：</h4>
+    <ul>
+        <li>咖啡</li>
+        <li>茶
+            <ul>
+                <li>红茶</li>
+                <li>绿茶
+                    <ul>
+                        <li>中国茶</li>
+                        <li>非洲茶</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>牛奶</li>
+    </ul>
+    <h2>一个定义列表：</h2>
+
+    <dl>
+        <dt>计算机</dt>
+        <dd>用来计算的仪器 ... ...</dd>
+        <dt>显示器</dt>
+        <dd>以视觉方式显示信息的装置 ... ...</dd>
+    </dl>
+
+    <hr color="red"/>
+    <p>对HTML进行分类</p>
+    <div class="cities">
+        <h2><a href="http://www.beijing.gov.cn/">北京</a></h2>
+        <p>
+            北京，简称“京”，
+            是中华人民共和国的首都、直辖市、国家中心城市、超大城市、国际大都市，
+            全国政治中心、文化中心、国际交往中心、科技创新中心和综合交通枢纽，
+            是中国共产党中央委员会、中华人民共和国中央人民政府、全国人民代表大会、中国人民政治协商会议全国委员会、中华人民共和国中央军事委员会所在地，
+            也是中部战区司令部驻地。
+        </p>
+        <h2>London</h2>
+        <p>
+            London is the capital city of England.
+            It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+        </p>
+    </div>
+    </div>
+
+
+    <hr color="red"/>
+    <p>frame以及frameset框架方法已经不推荐使用了，不过仍可以在<a href="html/frameset.html">这儿</a>看到例子</p>
+
+
+    <p>内联框架</p>
+    <iframe src="images/githubFace.jpg" width="400px"height="400px"></iframe>
+    <p>一些老的浏览器不支持 iframe。</p>
+    <p>如果得不到支持，iframe 是不可见的。</p>
+    <p>iframe可以在指定位置内嵌网页，相较于老版的frameset灵活性更大</p>
+
+    <p>将边框设置为零，两级iframe暂时是不起作用的</p>
+    <!--<iframe src="index.html#title3" width="100%"height= "400px" frameborder="10"></iframe>-->
+
+    <p>可以指定在某个iframe内部显示某个网页,类似于锚，只要将iframe属性指定即可</p>
+    <iframe src="html/frameA.html" name="iframe_en" ></iframe>
+    <p><a href="http://www.baidu.com" target="iframe_en">这里是百度，把百度放在frame框架中</a></p>
+
+    <hr color="red"/>
+    <p>脚本</p>
+    <p>有些网页禁用脚本，可以通过noscript显示出来</p>
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <p>字符实体</p>
+    <table class="dataintable" border="3">
+        <tbody><tr>
+            <th style="width:20%">显示结果</th>
+            <th style="width:20%">描述</th>
+            <th style="width:30%">实体名称</th>
+            <th style="width:30%">实体编号</th>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>空格</td>
+            <td>&amp;nbsp;</td>
+            <td>&amp;#160;</td>
+        </tr>
+
+        <tr>
+            <td>&lt;</td>
+            <td>小于号</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+        </tr>
+
+        <tr>
+            <td>&gt;</td>
+            <td>大于号</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+        </tr>
+
+        <tr>
+            <td>&amp;</td>
+            <td>和号</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+        </tr>
+
+        <tr>
+            <td>"</td>
+            <td>引号</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+        </tr>
+
+        <tr>
+            <td>'</td>
+            <td>撇号&nbsp;</td>
+            <td>&amp;apos; (IE不支持)</td>
+            <td>&amp;#39;</td>
+        </tr>
+
+        <tr>
+            <td>￠</td>
+            <td>分（cent）</td>
+            <td>&amp;cent;</td>
+            <td>&amp;#162;</td>
+        </tr>
+
+        <tr>
+            <td>£</td>
+            <td>镑（pound）</td>
+            <td>&amp;pound;</td>
+            <td>&amp;#163;</td>
+        </tr>
+
+        <tr>
+            <td>¥</td>
+            <td>元（yen）</td>
+            <td>&amp;yen;</td>
+            <td>&amp;#165;</td>
+        </tr>
+
+        <tr>
+            <td>€</td>
+            <td>欧元（euro）</td>
+            <td>&amp;euro;</td>
+            <td>&amp;#8364;</td>
+        </tr>
+
+        <tr>
+            <td>§</td>
+            <td>小节</td>
+            <td>&amp;sect;</td>
+            <td>&amp;#167;</td>
+        </tr>
+
+        <tr>
+            <td>©</td>
+            <td>版权（copyright）</td>
+            <td>&amp;copy;</td>
+            <td>&amp;#169;</td>
+        </tr>
+
+        <tr>
+            <td>®</td>
+            <td>注册商标</td>
+            <td>&amp;reg;</td>
+            <td>&amp;#174;</td>
+        </tr>
+
+        <tr>
+            <td>™</td>
+            <td>商标</td>
+            <td>&amp;trade;</td>
+            <td>&amp;#8482;</td>
+        </tr>
+
+        <tr>
+            <td>×</td>
+            <td>乘号</td>
+            <td>&amp;times;</td>
+            <td>&amp;#215;</td>
+        </tr>
+
+        <tr>
+            <td>÷</td>
+            <td>除号</td>
+            <td>&amp;divide;</td>
+            <td>&amp;#247;</td>
+        </tr>
+        </tbody></table>
+
+</html>
 
