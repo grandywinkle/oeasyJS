@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>oeasyTutor_1</title>
-    <style>
-        body{
-            background-color:#22c0c4;
-        }
-        h1{
-            color:pink;
-            padding:5px;
-            text-align:center;
-        }
-        h2{
-            color:blue;
-            padding:5px;
-        }
-    </style>
-</head>
-<body>
-<nav>
-    <a href="http://www.baidu.com" target ="_blank">
-        1.百度
-    </a>
-</nav>
-<h1><a href ="https://github.com/grandywinkle/oeasyJS"  >Hey!GitHub点这儿！</a></h1>
-<img src = "./images/githubFace.jpg"/>
-<h1>如何在github建立自己的网页？</h1>
-<article>
-    <h1>难受</h1>>
-    <h2>一.注册、验证并登陆一个github账号</h2>
-    <h3>1.1新建一个代码仓库，这里名叫oeasyJS</h3>
-    <h3>1.2在oeasyJS的setting中，设置GitHub Pages,并commit</h3>
-    <h3>1.3生成的网页便可以在外部访问了</h3>
-    <h3>1.4github原声生成模板可以删掉，从零开始写html</h3>
-    <h3>1.5上传图片，并加载</h3>
-</article>
-<h2>二.选择一个IDE环境(我这里选的时webstorm，注意使用2月版的，比较容易激活)</h2>
-<h3>2.1从VCS控制台可以从github上clone整个项目</h3>
-<h2>2.2项目右键commit项目，update并且merg，就可以将本地项目git到github上</h2>
-<h2>2.3</h2>
-</body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+        <!--以上是外部关联样式-->
+        <meta charset="UTF-8">
+        <title>HTML页面总结</title>
+        <style type="text/css">
+            h1{
+                text-align:center;
+            }
+            image{
+            }
+        </style>
+    </head>
+    <body>
+    <h1>第一个标题(主标题，一般只用一次)</h1>
+    <h2  id="formula">1.二级标题(可用作分段目录)</h2>
+    <h3>1.1三级标题(以此类推可至6及标题)</h3>
+
+
+    <a name="title3" href="http://www.baidu.com" target="_blank"><img src="images/githubFace.jpg" alt="找不到图片"width="100px"height="'100px"/><p>百度,这个链接是在本页面还是空白页面打开由target属性确定，而链接由href指定</p></a>
+    <img src="images/githubFace.jpg"width="200px"height="'200px" alt="找不到图片"/>
+
+
+
+    <hr color="yellow"/>
+    <hr color="pink"/>
+    <hr color="blue"/>
+    <hr color="green"/>
+    <p>分割段落,可以看到上面的分割线<hr color="red"/></p>
+
+    <!--注释是看不到的！！！！-->
+
+    <p>在不产生新段落的情况下想折行，就要用"<br/>"</p>
+        <p style="background-color:pink">这段文字背景是粉红的</p>
+        <p style="background-color:deepskyblue">这段文字背景是浅蓝色的</p>
+        <p style="font-family:Vivaldi">这段文字用了特殊字体</p>
+        <p style="text-align: center">这段文字居中显示</p>
+
+    <p><strong>强调文字</strong><br/>
+        <b>粗体文字</b><br/>
+        <b>大号文字</b><br/>
+        <em>着重文字</em><br/>
+        <i>斜体文字</i><br/>
+        <small>小号文字</small><br/>
+        <sub>下标字</sub><br/>
+        <sup>上标字</sup><br/>
+        <strong>H<sub><small>2</small></sub>O</strong><br/>
+        <strong >F(x) = X<sup><small>2</small></sup>+ X - 1</strong><br/>
+        <ins>插入下划线字</ins><br/>
+        <del>删除字</del>
+    </p>
+        <pre>
+        <code>这是一段python代码，保留了缩进格式
+            from time import time
+            count=0
+            while True:
+                count+=1
+                time.sleep(0.1)
+                print("/r hello!%d"%count,end="")
+        </code>
+        <p>这是键盘码,保存的快捷键<kbd>Ctrl</kbd>+<kbd>S</kbd></p>
+        <p>这段为变量定义<var>temp_count = 1;value = 1.0;</var></p>
+        </pre>
+
+    <abbr title = "StringBuffer">SB</abbr> .
+    <address>
+        Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <p>文字方向
+        <bdo dir="rtl">
+            what???
+        </bdo><br/>
+        <bdo dir="ltr">
+            what???
+        </bdo><br/>
+        <bdo dir="auto">
+            what???
+        </bdo><br/>
+    </p>
+    <p>
+        <blockquote>
+        This is a long quotation.
+        This is a long quotation. This is a long quotation.
+        This is a long quotation. This is a long quotation.
+        </blockquote>
+    </p>
+
+    <a href="#formula">这是一个id锚，通向本页面中的二级标题</a>
+    <a href="#title3">这是一个name锚，指向百度的a标签</a>
+    <p id="search">重新打开的页面指向了这里</p>
+    <a href="https://grandywinkle.github.io/oeasyJS/#search" target="_blank">跳转至另一个页面的这里</a>
+    </body>
 </html>
 
 
