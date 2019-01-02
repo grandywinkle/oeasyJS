@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5新特性</title>
+    <style type="text/css">
+        #mycanvas {
+            width: 600px;
+            height: 600px;
+            background-color: #FFFFFF;
+            border: 2px;
+            align-content: center;
+        }
+
+    </style>
+</head>
+<body background="../images/background.jpg">
+
+链接导航
+<nav>
+    <a href="/html/">HTML</a> |
+    <a href="/css/">CSS</a> |
+    <a href="/js/">JavaScript</a> |
+    <a href="/jquery/">jQuery</a>
+</nav>
+
+侧栏
+<aside>
+    <h4>Epcot Center</h4>
+    <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+</aside>
+
+页眉
+<header>
+    <h1>What Does WWF Do?</h1>
+    <p>WWF's mission:</p>
+</header>
+
+
+<article>
+    段落
+    <section>
+        <h1>WWF</h1>
+        <p>The World Wide Fund for Nature (WWF) is....</p>
+    </section>
+    <h1>What Does WWF Do?</h1>
+    <p>WWF's mission is to stop the degradation of our planet's natural environment,
+        and build a future in which humans live in harmony with nature.</p>
+</article>
+
+
+图片及图片描述
+<figure>
+    <img src="../images/githubFace.jpg" alt="The Pulpit Rock" width="500" height="500">
+    <figcaption style="text-align: start">Fig1. - 我的github头像.</figcaption>
+</figure>
+
+页脚
+<footer>
+    <p>Posted by: Hege Refsnes</p>
+    <p>Contact information: <a href="mailto:someone@example.com">
+        someone@example.com</a>.</p>
+</footer>
+
+<hr color="darkred"/>
+<strong>画布canvas</strong><br/>
+<canvas id="mycanvas"></canvas>
+<script type="text/javascript">
+    var canvas = document.getElementById("mycanvas");
+    var cxt = canvas.getContext('2d');
+
+    //线条
+    cxt.moveTo(100, 100);
+    cxt.lineTo(200, 100);
+    cxt.lineTo(100, 200);
+    cxt.stroke();
+    //圆形
+    cxt.fillStyle = "blue";
+    cxt.beginPath();
+    cxt.arc(70, 18, 15, 0, Math.PI * 2, true);
+    cxt.arc(100, 18, 10, 0, Math.PI * 2, true);
+    cxt.arc(150, 18, 10, 0, Math.PI, true);
+    cxt.closePath();
+    cxt.fill();
+    //渐变色
+    var grd = cxt.createLinearGradient(0, 50, 120, 55);
+    grd.addColorStop(0, "#ff0000");
+    grd.addColorStop(1, "#00FFff");
+    cxt.fillStyle = grd;
+    cxt.fillRect(0, 50, 120, 55);
+
+    //放入图像
+    var img = new Image();
+    img.src = "../images/small.jpg"
+    cxt.drawImage(img, 0, 0);
+
+</script>
+
+<hr color="blackred"/>
+<h1>SVG矢量图</h1>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="100,10 40,180 190,60 10,60 160,180"
+             style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+</svg>
+<svg width="100%" height="100%" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="50" r="40" stroke="black"
+            stroke-width="5" fill="red"/>
+</svg>
+
+<h1>层叠椭圆</h1>
+<svg width="100%" height="100%" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple"/>
+
+    <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime"/>
+
+    <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow"/>
+</svg>
+
+<h1>圆角矩形</h1>
+<svg width="100%" height="100%" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <rect xmlns="http://www.w3.org/2000/svg" x="20" y="20" rx="20" ry="20" width="250" height="100"
+          style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
+</svg>
+
+<h1>两个椭圆</h1>
+<svg width="100%" height="100%" version="1.1">
+    <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:yellow"/>
+
+    <ellipse cx="220" cy="100" rx="190" ry="20" style="fill:white"/>
+</svg>
+
+<h1>多边形</h1>
+<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <polygon xmlns="http://www.w3.org/2000/svg" points="220,100 300,210 170,250 123,234"
+             style="fill:#cccccc; stroke:#000000;stroke-width:1px"></polygon>
+</svg>
+
+<h1>折线</h1>
+<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <polyline xmlns="http://www.w3.org/2000/svg" points="0,0 0,20 20,20 20,40 40,40 40,60"
+              style="fill:white;stroke:red;stroke-width:2px"></polyline>
+</svg>
+
+<h1>螺旋</h1>
+<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path xmlns="http://www.w3.org/2000/svg"
+          d="M153 334 C153 334 151 334 151 334 C151 339 153 344 156 344 C164 344 171 339 171 334 C171 322 164 314 156 314 C142 314 131 322 131 334 C131 350 142 364 156 364 C175 364 191 350 191 334 C191 311 175 294 156 294 C131 294 111 311 111 334 C111 361 131 384 156 384 C186 384 211 361 211 334 C211 300 186 274 156 274"
+          style="fill:white;stroke:red;stroke-width:1px"></path>
+</svg>
+
+<h1>更多实例请参考W3School实例<a href="http://www.w3school.com.cn/svg/svg_examples.asp">SVG实例</a></h1>
+
+
+<hr color="darkred"/>
+<section>
+    <strong>视频</strong>
+    <video src="movie.ogg" controls="controls">
+    </video>
+
+
+</section>
+
+
+<p><br/><br/><br/><br/><br/><br/><br/></p>
+
+
+</body>
+</html>

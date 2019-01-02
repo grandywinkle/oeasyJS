@@ -5,6 +5,115 @@
     <title>表单</title>
 </head>
 <body>
+<form>
+    1.表单属性有action，可指定处理数据的脚本<br/>
+    2.表单有method属性可指定使用post或get方法，当数据量少时可采用get，并且提交信息会在地址栏可见
+    如果要提交密码需指定post方法<br/>
+    3.input类型可指定默认value<br/>
+    4.要提交表单数据，那么input标签必须指定name属性
+    5.input有很多种类，select、radio等等
+    <br/><br/>
+    first name:<br/>
+    <input type="text" name="firsttname" value="张三">
+    <br/>
+    last name:<br/>
+    <input type="text" name="lastname"><br/>
+    key:<br/>
+    <input type="text" name="key"><br/>
+    Sex:<br/>
+    <input type="radio" name="Sex" velue="male">male
+    <input type="radio" name="Sex" checked value="female">female<br/>
+
+    input种类:<br/>
+    input属性有多种：<br/>
+    1.disabled 2.max 3. maxlength 4.min 5.pattern 6.readonly 7.required 8.size step value<br/>
+    <strong>重要input属性1：autofocus，页面加载时自动获得焦点</strong><br/>
+    <strong>重要submit属性2：formaction、formmethod，针对同一个表单可以有不同的submit处理方式</strong><br/>
+    <strong>重要input属性3：formenctype，以不同编码形式提交表单数据，可作用于image和submit</strong><br/>
+    <strong>重要submit属性4：formnovalidate，submit不再对提交的表单数据进行验证</strong><br/>
+    <strong>重要submit属性5：formtarget，制定在何处显示接收到的响应</strong><br/>
+    <strong>重要input属性6：multiple，使得input可以输入多个数据</strong><br/>
+    <strong>重要input属性7：pattern，使用正则表达式检查input输入</strong><br/>
+    <strong>重要input属性8：placeholder，用于提示输出内容，灰色</strong><br/>
+
+    以下是input的种类<br/>
+    <input type="hidden" name="hidden">隐藏<br/>
+    <input type="time" name="time">时间<br/>
+    <input type="date" name="date">日期<br/>
+    <input type="datetime-local" name="date">当地时间<br/>
+    <input type="color" name="color">颜色<br/>
+    <input type="search" name="search">搜索<br/>
+    <input type="button" name="button">按钮<br/>
+    <input type="url" name="url">链接<br/>
+    <input type="range" name="range">范围<br/>
+    <input type="checkbox" name="checkbox" checked><br/>
+    <input type="email" name="email">E-mail<br/>
+    <input type="file" name="file">文件<br/>
+    <input type="image" name="image">照片<br/>
+    <input type="password" name="key" value="******">密码<br/>
+
+
+    selects:<br/>
+    <select>
+        指定option的selected选项可以设定默认option
+        <option value="option1">选项一</option>
+        <option value="option2" selected>option2</option>
+        <option value="option3">hh</option>
+    </select><br/>
+
+    textarea:定义多行输入字段<br/>
+    <textarea name="longMessage" rows="10" cols="30">
+            小猫正在花园玩耍。
+        </textarea><br/>
+
+
+    datalist:预选项<br/>
+    <input list="browsers">
+    <datalist id="browsers">
+        <option value="IE-10"></option>
+        <option value="FireFox"></option>
+        <option value="Chorme"></option>
+        <option value="UC"></option>
+    </datalist>
+    <br/>
+
+
+    <br/><br/><br/><br/>
+    <form method="post">
+        <input type="password" name="key" value="***********">密码<br/>
+        <input type="submit" name="submitPassward">提交密码
+    </form>
+    <br/><br/>
+
+
+    <button value="checked" onclick="alert('已经点击了check me按钮')">check me!</button>
+
+
+    <br/><input type="submit" name="submit">
+</form>
+
+
+1.fieldset可以将提交信息集中在一起，但是同一个form里面的submit会提交所有的form信息
+<form method="get">
+    <fieldset>
+        <legend>Personal information:</legend>
+        First name:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit"></fieldset>
+    <fieldset>
+        <legend>Personal data:</legend>
+        grade:<br>
+        <input type="text" name="grade" value="6">
+        <br>
+        age:<br>
+        <input type="text" name="age" value="12">
+        <br><br>
+        <input type="submit" value="Submit"></fieldset>
+</form>
 
 
 </body>
